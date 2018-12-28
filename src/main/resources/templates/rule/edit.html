@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8"/>
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="ruleForm">
+                        <input id="id" name="id" th:value="${rule.id}" type="hidden"/>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">任务名称：</label>
+                            <div class="col-sm-9">
+                                <input  name="taskName" class="form-control" type="text" th:field="${rule.taskName}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">任务分组：</label>
+                            <div class="col-sm-9">
+                                <input  name="taskArea" class="form-control" type="text"  th:field="${rule.taskArea}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">规则类型：</label>
+                            <div class="col-sm-9">
+                                <select name="type" id="type" class="form-control">
+                                    <option value ="0" th:field="${rule.type}">根据文件名匹配文件</option>
+                                    <option value ="1" th:field="${rule.type}">根据文件日期匹配文件</option>
+                                    <option value ="2" th:field="${rule.type}">根据正则表达式匹配文件名</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">源FTP IP地址：</label>
+                            <div class="col-sm-3">
+                                <input  name="sourceFTPIP" th:field="${rule.sourceFTPIP}" type="text" class="form-control"/>
+                            </div>
+                            <label class="col-sm-3 control-label">源FTP目录：</label>
+                            <div class="col-sm-3">
+                                <input  name="sourceFTPDir" th:field="${rule.sourceFTPDir}" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">源FTP用户名：</label>
+                            <div class="col-sm-3">
+                                <input  name="sourceFTPUsername" th:field="${rule.sourceFTPUsername}" type="text" class="form-control"/>
+                            </div>
+                            <label class="col-sm-3 control-label">源FTP密码：</label>
+                            <div class="col-sm-3">
+                                <input  name="sourceFTPPassword" th:field="${rule.sourceFTPPassword}" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">目标FTP IP地址：</label>
+                            <div class="col-sm-3">
+                                <input  name="targetFTPIP" th:field="${rule.targetFTPIP}" type="text" class="form-control"/>
+                            </div>
+                            <label class="col-sm-3 control-label">目标FTP目录：</label>
+                            <div class="col-sm-3">
+                                <input  name="targetFTPDir" th:field="${rule.targetFTPDir}" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">目标FTP用户名：</label>
+                            <div class="col-sm-3">
+                                <input  name="targetFTPUsername" th:field="${rule.targetFTPUsername}" type="text" class="form-control"/>
+                            </div>
+                            <label class="col-sm-3 control-label">目标FTP密码：</label>
+                            <div class="col-sm-3">
+                                <input  name="targetFTPPassword" th:field="${rule.targetFTPPassword}" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="type_0">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">源文件名：</label>
+                                <div class="col-sm-9">
+                                    <input  name="sourceFileName" th:field="${rule.sourceFileName}" type="text" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">源文件后缀：</label>
+                                <div class="col-sm-3">
+                                    <input  name="suffix" th:field="${rule.suffix}" type="text" class="form-control"/>
+                                </div>
+                                <label class="col-sm-3 control-label">拼接当天日期：</label>
+                                <div class="col-sm-3">
+                                    <select name="sourceDateFormat" id="sourceDateFormat" class="form-control">
+                                        <option value ="" th:field="${rule.sourceDateFormat}">不拼接</option>
+                                        <option value ="yyyy-MM-dd" th:field="${rule.sourceDateFormat}">yyyy-MM-dd</option>
+                                        <option value ="yyyyMMdd" th:field="${rule.sourceDateFormat}">yyyyMMdd</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">重命名文件名：</label>
+                                <div class="col-sm-3">
+                                    <input  name="targetFileName" th:field="${rule.targetFileName}" type="text" class="form-control"/>
+                                </div>
+                                <label class="col-sm-3 control-label">拼接当天日期：</label>
+                                <div class="col-sm-3">
+                                    <select name="targetDateFormat" id="targetDateFormat" class="form-control">
+                                        <option value ="" id ="" th:field="${rule.targetDateFormat}">不拼接</option>
+                                        <option value ="yyyy-MM-dd" th:field="${rule.targetDateFormat}">yyyy-MM-dd</option>
+                                        <option value ="yyyyMMdd" th:field="${rule.targetDateFormat}">yyyyMMdd</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group type_2" style="display: none">
+                            <label class="col-sm-3 control-label">正则表达式：</label>
+                            <div class="col-sm-9">
+                                <input  name="regex" th:field="${rule.regex}" type="text" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">备份天数：</label>
+                            <div class="col-sm-3">
+                                <input  name="getDays" th:field="${rule.getDays}" type="text" class="form-control"/>
+                            </div>
+                            <label class="col-sm-3 control-label">文件个数：</label>
+                            <div class="col-sm-3">
+                                <input name="fileNum" th:field="${rule.fileNum}" type="text" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">保留天数：</label>
+                            <div class="col-sm-9">
+                                <input  name="saveDays" th:field="${rule.saveDays}" type="text" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">执行类名：</label>
+                            <div class="col-sm-9">
+                                <input name="executeClassName" class="form-control" type="text" th:field="${rule.executeClassName}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">cron表达式：</label>
+                            <div class="col-sm-9">
+                                <input name="backupTimeCron" class="form-control" type="text" th:field="${rule.backupTimeCron}"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">任务明细：</label>
+                            <div class="col-sm-9">
+                               <textarea  name="taskDetail" th:field="${rule.taskDetail}" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+<script type="text/javascript" src="/js/system/rule/edit.js"/>
+</body>
+</html>

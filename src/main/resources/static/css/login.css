@@ -1,0 +1,126 @@
+.login{
+    position: relative;
+    height:100%;
+    min-width: 1000px;
+    min-height: 666px;
+}
+
+.login .head{
+    padding:20px;
+    width:220px;
+}
+.login .head img{
+    width:100%;
+}
+
+.login .container{
+    position:absolute;
+    width:100%;
+    bottom:0;
+    top:95px;
+}
+.login .container-bg{
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index:-5;
+}
+.login .container-bg img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.login .earth{
+    width:360px;
+    height:350px;
+    margin-top:10%;
+    margin-left:15%;
+}
+
+.login .earth img{
+    width:100%;
+    height:100%;
+}
+
+.login .foot{
+    position: absolute;
+    bottom:30px;
+    width:100%;
+    text-align: center;
+
+}
+.login .validate-logon-con{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: 46%;
+    right: 15%;
+    margin-top: -200px;
+
+}
+.login .validate-logon-con h2{
+    color:#fff;
+    font-size: 26px;
+    margin-bottom:20px;
+}
+.login .validate-logon{
+    width:250px;
+    padding:30px 20px;
+    border:5px solid #72c7f3;
+    background:#fff;
+}
+
+.login .validate-logon h3{
+    border-bottom: 1px solid #e7e7e7;
+    font-size: 16px;
+    color: #3b87ed;
+    padding-bottom: 10px;
+    margin-bottom: 26px;
+}
+.login .validate-logon li{
+    margin-bottom:12px;
+}
+.login .validate-logon input{
+    padding-left:30px;
+    width:216px;
+    height:36px;
+    border:1px solid #e7e7e7;
+    border-radius: 4px;
+}
+.login .validate-logon input[type='checkbox']{
+    width:12px;
+    height:12px;
+    float:left;
+    margin-right:10px;
+}
+.login .validate-logon .choice span{
+    float: right;
+}
+.login .validate-logon button{
+    width:100%;
+    height:36px;
+    font-size: 14px;
+    color:#fff;
+    background:#3987ec;
+    border-radius: 4px;
+    margin-bottom:36px;
+}
+.login .validate-logon li{
+    position: relative;
+}
+.login .validate-logon img{
+    position: absolute;
+    width: 30px;
+    top:5px;
+    left:2px;
+}
+.login .validate-logon .lock{
+    width:20px;
+    left: 6px;
+    top: 8px;
+}
+.login .err{
+    background:#eeefd8;
+    color:#f2be87;
+    padding:3px 10px;
+}

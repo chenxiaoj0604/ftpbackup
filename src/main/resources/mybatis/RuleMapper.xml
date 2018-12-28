@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.backup.dao.RuleDao">
+
+    <sql id="ruleColumns">
+        ID id,
+        TASKNAME taskName,
+        TASKAREA taskArea,
+        TASKDETAIL taskDetail,
+        EXECUTECLASSNAME executeClassName,
+        TASKSTATUS taskStatus,
+        LASTEXECUTESTATUS lastExecuteStatus,
+        TYPE type,
+        SOURCEFTPIP sourceFTPIP,
+        TARGETFTPIP targetFTPIP,
+        SOURCEFTPDIR sourceFTPDir,
+        TARGETFTPDIR targetFTPDir,
+        SOURCEFTPUSERNAME sourceFTPUsername,
+        TARGETFTPUSERNAME targetFTPUsername,
+        SOURCEFTPPASSWORLD sourceFTPPassword,
+        TARGETFTPPASSWORLD targetFTPPassword,
+        SOURCEFILENAME sourceFileName,
+        SUFFIX suffix,
+        SOURCEDATEFORMAT sourceDateFormat,
+        TARGETFILENAME targetFileName,
+        TARGETDATEFORMAT targetDateFormat,
+        SAVEDAYS saveDays,
+        BACKUPTIMECRON backupTimeCron,
+        GETDAYS getDays,
+        REGEX regex,
+        FILENUM fileNum
+    </sql>
+
+    <insert id="save">
+        INSERT INTO BACKUP_FTP_RULES(
+        TASKNAME,
+        TASKAREA,
+        TASKDETAIL,
+        EXECUTECLASSNAME,
+        TASKSTATUS,
+        TYPE,
+        SOURCEFTPIP,
+        TARGETFTPIP,
+        SOURCEFTPDIR,
+        TARGETFTPDIR,
+        SOURCEFTPUSERNAME,
+        TARGETFTPUSERNAME,
+        SOURCEFTPPASSWORLD,
+        TARGETFTPPASSWORLD,
+        SOURCEFILENAME,
+        SUFFIX,
+        SOURCEDATEFORMAT,
+        TARGETFILENAME,
+        TARGETDATEFORMAT,
+        SAVEDAYS,
+        GETDAYS,
+        BACKUPTIMECRON,
+        REGEX,
+        FILENUM
+        )
+        VALUES(
+        #{taskName,jdbcType=VARCHAR},
+        #{taskArea,jdbcType=VARCHAR},
+        #{taskDetail,jdbcType=VARCHAR},
+        #{executeClassName,jdbcType=VARCHAR},
+        #{taskStatus,jdbcType=VARCHAR},
+        #{type,jdbcType=VARCHAR},
+        #{sourceFTPIP,jdbcType=VARCHAR},
+        #{targetFTPIP,jdbcType=VARCHAR},
+        #{sourceFTPDir,jdbcType=VARCHAR},
+        #{targetFTPDir,jdbcType=VARCHAR},
+        #{sourceFTPUsername,jdbcType=VARCHAR},
+        #{targetFTPUsername,jdbcType=VARCHAR},
+        #{sourceFTPPassword,jdbcType=VARCHAR},
+        #{targetFTPPassword,jdbcType=VARCHAR},
+        #{sourceFileName,jdbcType=VARCHAR},
+        #{suffix,jdbcType=VARCHAR},
+        #{sourceDateFormat,jdbcType=VARCHAR},
+        #{targetFileName,jdbcType=VARCHAR},
+        #{targetDateFormat,jdbcType=VARCHAR},
+        #{saveDays,jdbcType=BIGINT},
+        #{getDays,jdbcType=BIGINT},
+        #{backupTimeCron,jdbcType=VARCHAR},
+        #{regex,jdbcType=VARCHAR},
+        #{fileNum,jdbcType=BIGINT}
+        )
+    </insert>
+
+    <select id="get" resultType="Rule">
+        SELECT
+        <include refid="ruleColumns"></include>
+        FROM BACKUP_FTP_RULES
+        WHERE
+        ID = #{id}
+    </select>
+
+    <select id="list" resultType="Rule">
+        SELECT
+        <include refid="ruleColumns"></include>
+        FROM BACKUP_FTP_RULES
+        <where>
+            <if test="taskName != null and taskName !=''">TASKNAME LIKE '%${taskName}%'</if>
+        </where>
+    </select>
+
+    <update id="update">
+        UPDATE BACKUP_FTP_RULES
+        <set>
+            TASKNAME = #{taskName,jdbcType=VARCHAR},
+            TASKAREA = #{taskArea,jdbcType=VARCHAR},
+            TASKDETAIL = #{taskDetail,jdbcType=VARCHAR},
+            TASKSTATUS = #{taskStatus,jdbcType=VARCHAR},
+            EXECUTECLASSNAME = #{executeClassName,jdbcType=VARCHAR},
+            TYPE = #{type,jdbcType=VARCHAR},
+            SOURCEFTPIP = #{sourceFTPIP,jdbcType=VARCHAR},
+            TARGETFTPIP = #{targetFTPIP,jdbcType=VARCHAR},
+            SOURCEFTPDIR = #{sourceFTPDir,jdbcType=VARCHAR},
+            TARGETFTPDIR = #{targetFTPDir,jdbcType=VARCHAR},
+            SOURCEFTPUSERNAME = #{sourceFTPUsername,jdbcType=VARCHAR},
+            TARGETFTPUSERNAME = #{targetFTPUsername,jdbcType=VARCHAR},
+            SOURCEFTPPASSWORLD = #{sourceFTPPassword,jdbcType=VARCHAR},
+            TARGETFTPPASSWORLD = #{targetFTPPassword,jdbcType=VARCHAR},
+            SOURCEFILENAME = #{sourceFileName,jdbcType=VARCHAR},
+            SUFFIX = #{suffix,jdbcType=VARCHAR},
+            SOURCEDATEFORMAT = #{sourceDateFormat,jdbcType=VARCHAR},
+            TARGETFILENAME = #{targetFileName,jdbcType=VARCHAR},
+            TARGETDATEFORMAT = #{targetDateFormat,jdbcType=VARCHAR},
+            SAVEDAYS = #{saveDays,jdbcType=BIGINT},
+            GETDAYS = #{getDays,jdbcType=BIGINT},
+            BACKUPTIMECRON = #{backupTimeCron,jdbcType=VARCHAR},
+            REGEX = #{regex,jdbcType=VARCHAR},
+            FILENUM = #{fileNum,jdbcType=BIGINT}
+        </set>
+        WHERE
+        ID = #{id}
+    </update>
+
+    <delete id="del">
+        DELETE
+        FROM BACKUP_FTP_RULES
+        WHERE
+        ID = #{id}
+    </delete>
+
+    <update id="updateLastExecuteStatus">
+        UPDATE BACKUP_FTP_RULES
+        <set>
+            LASTEXECUTESTATUS = #{lastExecuteStatus}
+        </set>
+        WHERE
+        TASKNAME = #{taskName} AND
+        TASKAREA = #{taskArea}
+    </update>
+
+    <select id="getByTaskNameAndArea" resultType="Rule">
+        SELECT
+        <include refid="ruleColumns"></include>
+        FROM BACKUP_FTP_RULES
+        <where>
+            <if test="taskName != null and taskName !=''">TASKNAME = #{taskName}</if>
+            AND
+            <if test="taskArea != null and taskArea !=''">TASKAREA = #{taskArea}</if>
+        </where>
+    </select>
+</mapper>

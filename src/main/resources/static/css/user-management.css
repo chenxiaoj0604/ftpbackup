@@ -1,0 +1,95 @@
+.management-page{
+    position: relative;
+    height:100%;
+    overflow: auto;
+}
+
+.management-page .list-container{
+   /* position: absolute;
+    width:100%;
+    top:70px;
+    bottom:30px;*/
+    height:100%;
+}
+
+.management-page .list-left{
+    float:left;
+    width:230px;
+    height:100%;
+    margin-left:20px;
+    border:1px solid #e2e9ec;
+    border-radius: 4px;
+    overflow: auto;
+}
+.management-page .list-right{
+    margin-left:20px;
+    height:100%;
+    margin-right:20px;
+    /*注释列表边框线*/
+    /*border:1px solid #e2e9ec;*/
+    border-radius: 4px;
+    overflow: auto;
+}
+.management-page .list-head{
+    height:60px;
+    line-height: 60px;
+    border-bottom:1px solid #e2e9ec;
+}
+.management-page .list-head h3{
+    display: inline-block;
+    margin-left:10px;
+    font-size:18px;
+}
+
+.management-page .right-search-bar button,.management-page .left-search-bar button{
+    width: 70px;
+    height: 30px;
+    font-size:14px;
+    border-radius: 0;
+}
+.management-page .right-search-bar input,.management-page .left-search-bar input{
+    height: 30px;
+    width: 160px;
+    padding-left: 10px;
+    margin-right:-5px;
+    border: 1px solid #e2e9ec;
+    border-radius: 5px 0 0 5px;
+    border-right:none;
+}
+.management-page .left-search-bar button{
+    line-height:30px;
+    overflow:left;
+    margin-top:7px;
+}
+.management-page .left-search-bar{
+    height:45px;
+    line-height: 45px;
+    border-bottom:1px solid #e2e9ec;
+
+}
+.management-page .left-search-bar input{
+    float:left;
+    margin-top:7px;
+    width:145px;
+    margin-left:6px;
+
+}
+.management-page .list-left .title{
+    height:36px;
+    line-height: 36px;
+    font-size:16px;
+    padding-left:10px;
+    border-bottom:1px solid #e2e9ec;
+}
+.management-page .sb-menu li a{
+    display: block;
+    height:36px;
+    line-height: 36px;
+    font-size:16px;
+    padding-left:50px;
+    color:#8f9196;
+    border-bottom: 1px solid #e2e9ec;
+}
+.management-page .sb-menu li a:hover,.management-page .sb-menu li a.active{
+    background:#b6b6b6;
+}

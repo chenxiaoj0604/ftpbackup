@@ -1,0 +1,140 @@
+.home-page{
+    height:100%;
+    position: relative;
+    background:#f3f8f9;
+    min-width:838px;
+    overflow: auto;
+}
+.home-page .nav{
+    height:50px;
+    margin-right:10px;
+    margin-left:10px;
+    border-bottom: 1px solid #ebebee;
+}
+.home-page .nav li{
+    float: left;
+    margin-right:10px;
+    padding:9px 35px;
+    background:#fff;
+    border-radius: 4px 4px 0 0;
+    color:#89bcee;
+}
+.home-page .nav li.active{
+    margin-top:12px;
+}
+.home-page .home-bg{
+    position: absolute;
+    top:42px;
+    left:10px;
+    right:10px;
+    bottom:0;
+    min-height:400px;
+    background:#fff;
+    overflow: hidden;
+}
+.home-page .home-bg .title{
+    position: relative;
+    margin:32px;
+}
+.home-page .home-bg .img-con{
+    position: absolute;
+    width: 500px;
+    height: 375px;
+    left:50%;
+    top:50%;
+    margin-left:-250px;
+    margin-top:-200px;
+}
+.home-page .home-bg img{
+    width:100%;
+    height:100%;
+}
+.home-page .home-bg .title:after{
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 21px solid #6585fd;
+    border-bottom: 10px solid transparent;
+}
+.home-page .home-bg .zh{
+    font-size:20px;
+    font-weight: bold;
+}
+.home-page .home-bg .cn{
+    font-size: 15px;
+    font-weight: bold;
+    color:#e3e3e3;
+}
+/* 导航栏 */
+.home-page .nav-bar{
+   border-top:1px solid #eeeeee;
+   border-bottom:2px solid #2f4052;
+   background:#fff;
+}
+.home-page .nav-bar button{
+    width:30px;
+    height:36px;
+}
+.home-page .nav-bar button:hover{
+background:#c6c6c6;
+}
+.home-page .nav-bar .btn-group{
+  border-left:1px solid #eeeeee;
+}
+.home-page .nav-bar .btn-group button{
+   width:90px;
+}
+.home-page .nav-bar .roll-left{
+   float:left;
+}
+.home-page .nav-bar .roll-right{
+   float:right;
+}
+.home-page .nav-bar .page-tabs{
+
+   margin-left:30px;
+   margin-right:121px;
+   height:36px;
+   border-left:1px solid #eeeeee;
+   border-right:1px solid #eeeeee;
+   overflow:hidden;
+}
+.home-page .nav-bar .page-tabs a{
+    color: #000;
+    text-decoration: none;
+    float:left;
+    width: 120px;
+    height: 36px;
+    border-right:1px solid #eeeeee;
+    line-height: 36px;
+    text-align: center;
+}
+
+.home-page .nav-bar .page-tabs a .fa-times-circle:hover{
+  color:red;
+}
+.home-page .nav-bar .page-tabs a:hover{
+    text-decoration: none;
+    color:#fff;
+    background:#30404f;
+
+}
+.home-page .nav-bar .page-tabs a.active{
+      color:#fff;
+      background:#30404f;
+}
+.home-page .nav-bar .page-tabs .page-tabs-content{
+  height:36px;
+}
+.iframe-con{
+   position: absolute;
+   right: 0;
+   left: 0;
+   bottom: 6px;
+   top: 100px;
+}

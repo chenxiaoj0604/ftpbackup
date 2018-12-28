@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/reset.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/yh.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/user-management.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/plugins/bootstrap-table/bootstrap-table.min.css}"/>
+    <!--<link type="text/css" rel="stylesheet" th:href="@{/js/plugins/bootstrap/bootstrap.min.css}"/>-->
+
+    <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery-1.12.4.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/plugins/bootstrap-table/bootstrap-table.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/plugins/layer/layer.js}"></script>
+    <script type="text/javascript" th:src="@{/js/system/rule/list.js}"></script>
+</head>
+<body>
+<div class="layout-right">
+    <div class="management-page">
+        <div class="list-container">
+            <div class="list-right">
+                <div class="list-head">
+
+                    <div class="right-search-bar float-right">
+                        <button type="button" class="btn  btn-primary" onclick="edit()">
+                            <i class="fa fa-plus hidden" aria-hidden="true"></i>添加
+                        </button>
+
+                        <input id="searchName" type="text" placeholder="请输入任务名称"/>
+                        <button class="btn btn-success margin-right-10" onclick="reload()">搜索</button>
+                    </div>
+                    <table id="ruleTable" data-mobile-responsive="true"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+html,body{
+    font-family: 'PingFang SC','Microsoft YaHei','Helvetica Neue',Helvetica,STHeitiSC-Light,Arial,sans-serif;
+    font-size:12px;
+    width: 100%;
+    height:100%;
+    color: #666666;
+}
+
+.layout-left{
+    float:left;
+    width:200px;
+    height:100%;
+    overflow-y: auto;
+
+
+}
+/** 菜单页面布局 */
+.layout-left ul li ul li,.layout-left p{
+    cursor: pointer;
+    color:#aaadb9;
+    height:38px;
+    line-height: 38px;
+    font-size: 16px;
+}
+.layout-left ul li a{
+    color:#aaadb9;
+    display: block;
+    height:100%;
+    text-decoration: none;
+}
+.layout-left ul li a.active{
+    color:#fefefe;
+    border:none;
+}
+.layout-left li ul li span,.layout-left p span{
+    float:left;
+    margin-left:20px;
+    margin-right:10px;
+    font-size:14px;
+    line-height: 38px;
+}
+.layout-left li ul li span{
+    margin-left:50px;
+}
+.layout-left p i{
+    float:right;
+    font-size: 16px;
+    margin-right:20px;
+}
+/** 右侧布局 */
+.layout-right{
+    /*margin-left:200px;*/
+    height:100%;
+    overflow: auto;
+}
+
+/** 右布局头部 */
+.layout-right .right-head{
+    background:#fff;
+    border:1px solid #ebebee;
+    border-bottom: none;
+}
+.layout-right .right-head h2{
+    float:left;
+    height:30px;
+    font-size:16px;
+    line-height:30px;
+    margin-left:20px;
+}
+.layout-right .right-head ul{
+    float: right;
+    margin-top:20px;
+}
+.layout-right .right-head li{
+    float:left;
+    margin-right:20px;
+}
+
+/** 右布局导航 */
+.layout-right .nav-title{
+    height:50px;
+    line-height: 50px;
+    font-size:16px;
+    background:#f3f8f9;
+    border-bottom:1px solid #f0f3f3;
+}
+.layout-right .nav-title span{
+    display: inline-block;
+    padding: 0 10px;
+    margin-left: 20px;
+    border-bottom: 2px solid #50a1e9;
+
+}
+/** logo 图标 */
+.logo-icon{
+    padding-top:5px;
+    padding-bottom:3px;
+    text-align: center;
+}
+.logo-icon img{
+    width:50px;
+    height:50px;
+}
+
+/** 基本样式 */
+
+/** 主题样式 */
+.bg-theme {
+    background:#283c5c;
+}
+
+.bg-theme-active{
+    background:#20334e;
+}
+
+.bg-sb-theme{
+    background:#20334e;
+}
+.margin-left-10{
+    margin-left:10px;
+}
+.margin-left-20{
+    margin-left:20px;
+}
+.margin-right-10{
+    margin-right:10px;
+}
+.margin-right-20{
+    margin-right:20px;
+}
+.padding-left-10{
+    padding-left:10px;
+}
+.padding-left-20{
+    padding-left:20px;
+}
+.padding-right-10{
+    padding-right:10px;
+}
+.padding-right-20{
+    padding-right:20px;
+}
+.font-size-14{
+    font-size:14px;
+}
+.font-size-16{
+    font-size:16px;
+}
+.font-size-18{
+    font-size:18px;
+}
+.font-size-20{
+    font-size:20px;
+}
+.font-size-22{
+    font-size:22px;
+}
+
+.float-left{
+    float:left;
+}
+.float-right{
+    float:right;
+}
+/** 按钮背景 */
+.bg-button{
+    color:#fff;
+    background:#2b8bdd;
+    background:linear-gradient(#46a2fe,#036eb9);
+    border-radius: 4px;
+}
+
+.red{
+    color:red;
+}
+.light-gray{
+    color:#8f9196;
+}
+.blue{
+    color:#476dfd;
+}
+.cursor{
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
